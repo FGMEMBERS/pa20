@@ -89,11 +89,17 @@ Cruising Range s/mi 	       500
   <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
 </propeller>
 
-<!-- nose -->
-<gear x="-5" y="0.0" z="-0.25" compression="0.16" spring="0.8"> 
-<control-input axis="/controls/flight/rudder" control="STEER" invert="true"
+<gear x="-5" y="0" z="-0.25" compression="0.16"> <!-- tailwheel  -->
+  <control-input axis="/controls/gear/tailwheel-lock" control="CASTERING"
+                 src0="0" src1="1"
+                 dst0="1" dst1="0"/>
+</gear>
+
+<!-- tail wheel -->
+<gear x="-5" y="0" z="-0.25" compression="0.16" spring="0.8">
+  <control-input axis="/controls/flight/rudder" control="STEER"
                  src0="-1.0" src1="1.0"
-                 dst0="-0.1" dst1="0.1"/>
+                 dst0="0.3" dst1="-0.3"/>
 </gear>
 
 <!-- left main -->
